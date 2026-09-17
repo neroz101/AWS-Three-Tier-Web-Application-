@@ -17,7 +17,7 @@ In this project i implemented a highly available, secure 3-tier web application 
 - **NAT Gateway** — Outbound internet access for private subnets
 - **CloudWatch** — Monitoring for the Auto Scaling Group
 
-## What Was Configured, and Why
+## What Was Configured and Why
 
 ### Subnet Design
 While creating the VPC,i created 2 public subnets (Web tier) and 4 private subnets (2 for the App tier, 2 for the Data tier), spread across 2 Availability Zones(AZ). This separation keeps the App and Database tiers completely unreachable from the internet while still letting the Web tier serve public traffic and the multi-AZ layout provides fault tolerance if one AZ becomes unavailable. A single NAT Gateway (in one AZ) gives the private subnets outbound internet access , for example, to pull OS or package updates  without exposing them to inbound traffic.
